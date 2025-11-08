@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+it plays a sequencer, plug and play. use the inputs to increase/decrease tempo. you need a speaker for it to play
 
 ## How to test
 
-Explain how to use your project
+set a clock to 4,8Mhz and connect a speaker and it should work.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+a speaker is needed to play the music.

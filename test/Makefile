@@ -2,10 +2,10 @@
 # See https://docs.cocotb.org/en/stable/quickstart.html for more info
 
 # List your source files here:
-SOURCE_FILES = project.vhdl
+SOURCE_FILES = bygg_ett_gratis_chip.vhdl
 
 # Toplevel name of your VHDL project
-COCOTB_TOPLEVEL = tt_um_example
+COCOTB_TOPLEVEL = tt_um_synth_magmusson
 
 # Common
 WAVES ?= 1
