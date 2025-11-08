@@ -64,27 +64,27 @@ begin
             seq_index <= 0;
             u <= '0';
 
-        elsif hz_count >= wavelength/2 then
-            hz_count <= 0;       -- nollställ
+        elsif rising_edge(clk) then 
+            if hz_count >= wavelength/2 then
+                hz_count <= 0;       -- nollställ
 
-            if u = '1' then
-                u <= '0';
-            else
-                u <= '1';
-                u_counter <= u_counter + 1; -- räkna hertz?
-            end if; 
+                if u = '1' then
+                    u <= '0';
+                else
+                    u <= '1';
+                    u_counter <= u_counter + 1; -- räkna hertz?
+                end if; 
         
-        elsif seq_count >= bpm then
-            seq_count <= 0;
-            u_counter <= 0;
-            if seq_index = 47 then
-                seq_index <= 0;
-            else
-                seq_index <= seq_index + 1;
+            elsif seq_count >= bpm then
+                seq_count <= 0;
+                u_counter <= 0;
+                if seq_index = 47 then
+                    seq_index <= 0;
+                else
+                    seq_index <= seq_index + 1;
+                end if;
             end if;
 
-
-        elsif rising_edge(clk) then 
             wavelength <= hz_list(seq_index);
             hz_count <= hz_count + 1;
             seq_count <= seq_count + 1;
